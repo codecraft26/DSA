@@ -1,18 +1,41 @@
 #include "bits/stdc++.h"
 using namespace std;
-#define  vi vector<int> 
-#define vvi vector<vi>
-#define pii pair<int ,int>
-// #define vvi vector<pii>
-#define rep(i,a,b) for(int i=a;i<b;i++)
-#define ff first
-#define ss second;
-#define setBits(x) builtin_popcount(x)
-const int N=1e5+2,MOD=1e9+7;
+const int N=1e5+2;
+bool vis[N];
+vector<int> adj[N] ;
+void dfs(int node){
+    //preorder
+    vis[node]=1;
+    cout<<node<<" ";
+    //inorder
+    vector<int> :: iterator it;
+    for(it=adj[node].begin();it!=adj[node].end();it++){
+        if(vis[*it]);
+    else{
 
-vi adj[N];
+        dfs(*it);
+    }
+        
 
-signed main() 
+    }
+    // postorder 
+}
+int main() 
 {
+    for(int i=0;i<N;i++)
+        vis[i]=0;
+    int n,m;// number of node and edges
+    cin>>n>>m;
+    int x,y; 
+    for(int i=0;i<m;i++)
+            vis[i]=false;
+    for(int i=0;i<m;i++){
+      cin>>x>>y;
+      adj[x].push_back(y);
+       adj[y].push_back(x);
+    }
+  
+        dfs(1);
+
     return 0;
 }
