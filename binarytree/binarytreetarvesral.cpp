@@ -28,6 +28,13 @@ void inorder( Node *root){
     cout<<root->data<<" ";
     inorder(root->right);
 }
+int getmax(Node *root){
+  if(root==NULL){
+    return 0;
+  }
+  return getmax(root->left)+getmax(root->right)+1;
+
+}
 int main() 
 {
   
@@ -35,9 +42,7 @@ int main()
     root->left=new Node(3);
       root->left->left=new Node(3);
         root->left->right=new Node(5);
-        // root->right->left=new Node(9);
-    preorder(root);
-    cout<<endl;
-    inorder(root);
+  
+   cout<< getmax(root);
     return 0;
 }
