@@ -9,10 +9,11 @@ for(int i =0;i<n;i++){
     cin>>arr[i];
 
 }
-int key;
-cin>>key;
+
 int j;
+
 for(int i=0;i<n;i++){
+    int key;
      key = arr[i];
       j = i - 1;
       while (j >= 0 && arr[j] > key)
