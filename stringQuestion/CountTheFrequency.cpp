@@ -9,7 +9,7 @@ string s;
 cin>>s;
 char a;
 cin>>a;
-map<char , int >m;
+map<char , int >m; // defining a map for string
 map<char , int >::iterator itr; // defining the iterator for map
  for(long i=0;i<s.length();i++)
         cout<<m[s[i]]++<<endl;
