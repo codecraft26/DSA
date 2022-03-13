@@ -46,6 +46,21 @@ if(root==NULL){
 else
   return sumofallnode(root->left)+sumofallnode(root->right)+root->data;
 }
+
+
+
+// hieght of a binaryy tree 
+// deepest node of a binary tree 
+
+int calhieghtTree(Node *root){
+  if(root==NULL)
+  return 0;
+  int lhieght=calhieghtTree(root->left);
+  int rhieght=calhieghtTree(root->right);
+  
+  return max(lhieght,rhieght)+1;
+
+}
 int main() 
 {
   
@@ -54,8 +69,8 @@ int main()
       root->left->left=new Node(3);
     root->left->right=new Node(5);
  root->left->right->right=new Node(5);
-   cout<< getmax(root)<<endl;
-
-   cout<<sumofallnode(root)<<endl;
+   cout<< getmax(root)<<endl;// printing the number of node in binary tree
+   cout<<sumofallnode(root)<<endl;//printing  the sum of node binary tree
+   cout<<"hieght of binary tree is "<<calhieghtTree(root)<<endl;// calcuatting the hieght of binary tree
     return 0;
 }
