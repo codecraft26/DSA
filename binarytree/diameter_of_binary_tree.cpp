@@ -50,13 +50,31 @@ int diameter(Node *root ){
 
 }
 
+int calculated(Node *root,int* hieght){
+    if(root==NULL){
+        *hieght=0;
+        return 0;
+    }
+    int l=0,r=0;
+    int ld=calculated(root->left,&l);
+    int rd=calculated(root->right,&r);
+    int currentdiameter=l+r+1;
+    *hieght=max(l,r)+1;
+    
+    return max(currentdiameter,max(ld,rd));
+
+
+}
+
 int main(){
 
       struct Node *root=new Node(1);
     root->left=new Node(3);
       root->left->left=new Node(3);
     root->left->right=new Node(5);
-    cout<<diameter(root);
+    cout<<diameter(root)<<endl;
+    int hieght=0;
+    cout<<calculated(root,&hieght);
 
 
 
