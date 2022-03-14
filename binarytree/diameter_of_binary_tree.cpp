@@ -68,6 +68,7 @@ int calculated(Node *root,int* hieght){
 
 int main(){
 
+//main function
       struct Node *root=new Node(1);
     root->left=new Node(3);
       root->left->left=new Node(3);
