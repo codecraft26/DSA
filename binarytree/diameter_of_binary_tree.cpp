@@ -77,7 +77,7 @@ int main(){
     int hieght=0;
     cout<<calculated(root,&hieght);
 
-
+// main funtion
 
 return 0;
 }
