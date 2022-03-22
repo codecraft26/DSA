@@ -8,7 +8,7 @@ int main(){
     int sum=0;
     for (int i = 0; i<10; i++)
     {
-            sum+=a[i];
+            sum+=a[i]; //adding the number and show them
     }
     cout<<"number of 1s is "<<sum<<endl;
     
