@@ -73,4 +73,7 @@ int main()
    cout<<sumofallnode(root)<<endl;//printing  the sum of node binary tree
    cout<<"hieght of binary tree is "<<calhieghtTree(root)<<endl;// calcuatting the hieght of binary tree
     return 0;
+
+
+    
 }
