@@ -50,6 +50,7 @@ int diameter(Node *root ){
 
 }
 
+
 int calculated(Node *root,int* hieght){
     if(root==NULL){
         *hieght=0;
@@ -66,6 +67,15 @@ int calculated(Node *root,int* hieght){
 
 }
 
+// to find the maximum depth 
+int maxddepth(Node *root){
+    if(root==NULL)return 0;
+        int lefth=1+maxddepth(root->left);
+        int righth=1+maxddepth(root->right);
+        return max(lefth,righth);
+    
+}
+
 int main(){
 
 //main function
@@ -75,7 +85,9 @@ int main(){
     root->left->right=new Node(5);
     cout<<diameter(root)<<endl;
     int hieght=0;
-    cout<<calculated(root,&hieght);
+    cout<<calculated(root,&hieght)<<endl;
+    cout<<maxddepth(root);
+
 
 // main funtion
 

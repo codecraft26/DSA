@@ -10,7 +10,7 @@ int main(){
     {
             sum+=a[i]; //adding the number and show them
     }
-    cout<<"number of 1s is "<<sum<<endl;
+    cout<<"number of 1s is "<<sum<<endl;       
     
 
 return 0;
