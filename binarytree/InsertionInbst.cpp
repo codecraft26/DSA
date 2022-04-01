@@ -42,6 +42,20 @@ Node* insertBST(Node *root, int val) {
   }
       return root;
 }
+Node* SearchinBst(root,val){
+  if(root==NULL){
+    return NULL;
+  }
+  if(root->data==val){
+    return root;
+  }
+  if(root->data>val){
+    return Search(root->left,val);
+  }
+  else{
+    return Search(root->right,val);
+  }
+}
 
 
 int main(){
@@ -50,6 +64,12 @@ int main(){
     root=insertBST(root,i);
   }
   preorder(root);
+  if(SearchinBst(root,5)){
+    cout<<"\nfound";
+  }
+  else{
+    cout<<"\nnot found";
+  }
   return 0;
 }
 
