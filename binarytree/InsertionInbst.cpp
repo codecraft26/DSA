@@ -56,6 +56,36 @@ Node* SearchinBst(root,val){
     return Search(root->right,val);
   }
 }
+  Node* deleteInBst(root,val){
+    if(root==NULL){
+      return NULL;
+    }
+    if(root->data>val){
+      root->left=deleteInBst(root->left,val);
+    }
+    else if(root->data<val){
+      root->right=deleteInBst(root->right,val);
+    }
+    else{
+      if(root->left==NULL){
+        Node *temp=root->right;
+        delete root;
+        return temp;
+      }
+      else if(root->right==NULL){
+        Node *temp=root->left;
+        delete root;
+        return temp;
+      }
+      Node *temp=root->right;
+      while(temp->left!=NULL){
+        temp=temp->left;
+      }
+      root->data=temp->data;
+      root->right=deleteInBst(root->right,temp->data);
+    }
+    return root;
+  }
 
 
 int main(){
