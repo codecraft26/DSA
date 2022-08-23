@@ -8,7 +8,7 @@ int largest(vector<int>vec){
     int largest=0;
     for(int i=1;i<nums;i++)
         if(vec[i]>vec[largest])
-        largest=i;
+        largest=i; //checking for what type of longest
     return vec[largest];
 
 }
