@@ -23,15 +23,7 @@ using namespace std;
 
     
  };
-  void insertAtHead(Node* &head,int d ){
 
-        Node* temp=new Node(d);
-        temp->next=head;
-        head=temp;
-
-
-
-    }
     void printLinkedList(Node* &head){
         Node* temp=head;
         while(temp!=NULL){
@@ -42,6 +34,13 @@ using namespace std;
         cout<<endl;
     
 
+    }
+    void insertAtTail(Node* &head,int d){
+       Node* new_head= new Node();
+       Node* last=new_head;
+       new_head->data=d;
+       new_head->next=NULL;
+       
     }
 
 int main(){
@@ -58,6 +57,7 @@ int main(){
         insertAtHead(head,373);
     printLinkedList(head);
     cout<<endl;
+    insertAtTail(head,34);
 
 
     
