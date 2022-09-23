@@ -33,7 +33,7 @@ int main(){
     root->left->right=new Node(34);
     root->left->left=new Node(65);
     root->right=new Node(5);
-    cout<<sumOfNode(root);
+    cout<<zsumOfNode(root);
 
 
 

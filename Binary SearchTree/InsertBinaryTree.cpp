@@ -36,9 +36,10 @@ bool Search(Node * root ,int val){
     }
    
 }
-void insert(Node *root ,int val){
+Node* insert(Node *root ,int val){
     if(root==NULL){
         return new Node(val);
+        return root;
 
     }
 
@@ -74,22 +75,16 @@ void preorder(Node *root){
 
 int main(){
     
-        Node* node1 = new Node(10);
-    Node* root=node1;
-    root->left=new Node(3);
-    root->right=new Node(34);
-    root->left->left=new Node(1);
-    root->right->left=new Node(5);
-    preorder(root);
-    if(Search(root,34)){
-        cout<<"exits";
+Node *root=NULL;
+root=insert(root,5);
+insert(root,78);
+insert(root,67);
+insert(root,89);
+insert(root,34);
+preorder(root);
 
-    }
-    else{
-        cout<<"doest exist";
-    }
 
-    
+
 
 
 
