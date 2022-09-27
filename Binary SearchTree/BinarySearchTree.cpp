@@ -17,6 +17,25 @@ class Node{
 
 };
 
+// finding maximum value in binary search tree
+Node* maxvalue(Node* root){
+    Node* temp=root;
+    while(temp->right!=NULL){
+        temp=temp->right;
+    }
+    return temp;
+    
+}
+// finding minimum value in binary search tree
+//
+Node* minvalue(Node* root){
+    Node* temp=root;
+    while(temp->left!=NULL){
+        temp=temp->left;
+    }
+    return temp;
+    
+}
 
 bool Search(Node * root ,int val){
     if(root==NULL){
