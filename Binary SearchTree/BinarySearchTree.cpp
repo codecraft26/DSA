@@ -74,6 +74,67 @@ void insert(Node *root ,int val){
 
 }
 
+Node* deleteFromBst(Node* root,int val){
+    //base case
+    if(root==NULL){
+        return root;
+    }
+    if(root->data==val){
+        // 0 child
+        if(root->left==NULL && root->right==NULL){
+            delete root;
+            return NULL;
+        }    
+
+
+
+        //1 child
+
+        //left child
+        if(root->left!=NULL && root->right==NULL){
+            Node* temp=root->left;
+            delete root;
+            return temp;
+        }
+        // right child
+        if(root->left==NULL && root->right!=NULL){
+            Node* temp=root->right;
+            delete root;
+            return temp;
+        }
+
+
+
+
+
+        //2 child
+
+        if(root->left!=NULL && root->right!=NULL){
+            int mini=minvalue(root->right);
+            root->data=mini;
+            root->right=deleteFromBst(root->right,mini);
+            return right;
+
+
+        }
+
+
+
+    }
+    else if(root->data>val){
+        root->left=deleteFromBst(root->left,val);
+        return root;
+    }
+    else if(root->data<val){
+        root->right=deleteFromBst(root->right,val);
+        return root;
+    }
+
+
+
+
+}
+
   void inorder( Node *root){
      if(root==NULL){
     return;
