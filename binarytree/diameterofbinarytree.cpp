@@ -24,3 +24,29 @@
         
         
     }
+
+    // optimization
+
+     pair<int,int> diameterfast(Node* root) {
+        // Your code here
+        if(root==NULL){
+            pair<int,int> p=make_pair(0,0);
+            return p;
+        }
+          pair<int,int> left=diameter(root->left);
+          pair<int,int> right=diameter(root->right);
+          
+          int op1=left.first;
+          int op2=right.first;
+          int h=left.second+right.second+1;
+          
+          
+        
+        pair<int,int> ans;
+        ans.first=max(op1,max(op2,h));
+        ans.second=max(left.second,right.second)+1;
+        return ans;
+        
+        
+        
+    }
