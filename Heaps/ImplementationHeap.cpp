@@ -71,7 +71,8 @@ class Heap{
 
     
 };
-void heapify(int arr[],int n ,int i){
+//max heap creation throgh heapify function
+void heapifyMax(int arr[],int n ,int i){
     int largest=i;
     int left=2*i;
     int right=2*i+1;
@@ -84,8 +85,27 @@ void heapify(int arr[],int n ,int i){
     }
     if(largest!=i){
         swap(arr[largest],arr[i]);
-        heapify(arr,n,largest);
+        heapifyMax(arr,n,largest);
     }
+}
+//min heap creation throgh heapify function
+void heapifyMin(int arr[],int n ,int i){
+
+ int smallest=i;
+    int left=2*i;
+    int right=2*i+1;
+    if(left <n && arr[smallest]>arr[left]){
+    smallest=left;
+
+    }
+    if(right<n && arr[smallest]>arr[right]){
+        smallest=right;
+    }
+    if(smallest!=i){
+        swap(arr[smallest],arr[i]);
+        heapifyMin(arr,n,smallest);
+    }
+
 }
 int main(){
     Heap h;
@@ -101,7 +121,15 @@ int main(){
     int arr[6]={-1,54,53,55,52,50};
     int n =5;
     for(int i =n/2;i>0;i--){
-            heapify(arr,n,i);
+            heapifyMax(arr,n,i);
+    }
+   cout<<"printing the array now";
+   for(int i =0;i<n;i++){
+    cout<<arr[i]<<" ";
+   }
+   cout<<endl;
+    for(int i =n/2;i>0;i--){
+            heapifyMin(arr,n,i);
     }
    cout<<"printing the array now";
    for(int i =0;i<n;i++){
