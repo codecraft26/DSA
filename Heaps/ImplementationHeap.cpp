@@ -32,9 +32,39 @@ class Heap{
             cout<<arr[i]<<" ";
         }
     }
+    // always delete from root node 
+    void deletion(){
+        // delete and swap 
+        if(size==0){
+            cout<<"Nothing to delete";
+            return;
+            }
+            //step 1 put last element into first element 
+            arr[1]=arr[size];
+            size--;
+            //take root node to its correct postion
+             int i=1;
+            while(i<size){
+               
+                int leftindex=2*i;
+                int rightIndex=2*i+1;
+                if(leftindex<size && arr[i]<arr[leftindex]){
+                    swap(arr[i],arr[leftindex]);
+                    i=leftindex;
+                }
+                else if(rightIndex<size && arr[i]<arr[rightIndex]){
+                    swap(arr[i],arr[rightIndex]);
+                    i=rightIndex;
+                }
+                else{
+                    return;
+                }
+            }
 
-    void deletion(int val){
-        
+
+
+
+
     }
 };
 
@@ -45,7 +75,9 @@ int main(){
     h.insert(4);
     h.insert(33);
     h.Print();
-
+    cout<<endl;
+    h.deletion();
+    h.Print();
 
 return 0;
 }
