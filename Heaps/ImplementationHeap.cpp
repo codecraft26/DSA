@@ -72,22 +72,22 @@ class Heap{
     
 };
 //max heap creation throgh heapify function
-void heapifyMax(int arr[],int n ,int i){
-    int largest=i;
-    int left=2*i;
-    int right=2*i+1;
-    if(left <n && arr[largest]<arr[left]){
-        largest=left;
+    void heapifyMax(int arr[],int n ,int i){
+        int largest=i;
+        int left=2*i;
+        int right=2*i+1;
+        if(left <=n && arr[largest]<arr[left]){
+            largest=left;
 
+        }
+        if(right<=n && arr[largest]<arr[right]){
+            largest=right;
+        }
+        if(largest!=i){
+            swap(arr[largest],arr[i]);
+            heapifyMax(arr,n,largest);
+        }
     }
-    if(right<n && arr[largest]<arr[right]){
-        largest=right;
-    }
-    if(largest!=i){
-        swap(arr[largest],arr[i]);
-        heapifyMax(arr,n,largest);
-    }
-}
 //min heap creation throgh heapify function
 void heapifyMin(int arr[],int n ,int i){
 
@@ -105,6 +105,20 @@ void heapifyMin(int arr[],int n ,int i){
         swap(arr[smallest],arr[i]);
         heapifyMin(arr,n,smallest);
     }
+
+}
+
+void HeapSort(int arr[],int size ){
+    int t=size;
+    while(t>size){
+        // step1 for swaping the element
+       swap(arr[t],arr[1]);
+       //decrement the size  of array
+       size--;
+       // step 2 
+       heapifyMax(arr,size,1);
+    }
+    
 
 }
 int main(){
@@ -128,12 +142,20 @@ int main(){
     cout<<arr[i]<<" ";
    }
    cout<<endl;
-    for(int i =n/2;i>0;i--){
-            heapifyMin(arr,n,i);
+//     for(int i =n/2;i>0;i--){
+//             heapifyMin(arr,n,i);
+//     }
+//    cout<<"printing the array now";
+//    for(int i =0;i<n;i++){
+//     cout<<arr[i]<<" ";
+//    }
+
+
+
+    HeapSort(arr,n);
+    for(int i=0;i<n;i++){
+        cout<<arr[i] <<' ';
+
     }
-   cout<<"printing the array now";
-   for(int i =0;i<n;i++){
-    cout<<arr[i]<<" ";
-   }
 return 0;
 }
