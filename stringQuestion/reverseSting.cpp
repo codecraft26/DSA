@@ -10,6 +10,33 @@ string reverseString(string s){
         return str;
 }
 
+
+
+string reverseStringStack(string s ){
+
+    stack<string> st;
+    string temp="";
+    for(int i =0;i<s.size();i++){
+        if(s[i]==' '){
+            st.push(temp);
+            temp='';
+
+
+        }
+        else
+    {
+      temp=temp+s[i];
+    }
+            while(!st.empty()){
+
+                
+                temp=st.pop;
+
+            }
+
+    }
+}
+
 int main(){
 string s ;
 cin>>s;
