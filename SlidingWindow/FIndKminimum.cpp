@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// sliding window
 
 int main(){
     int n ,k;
