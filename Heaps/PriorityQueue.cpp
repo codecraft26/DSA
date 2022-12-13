@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     //maxheap
     priority_queue<int,vector<int>> pq;
-    pq.push(2);
+    pq.push(2); //to pushinto the array
     pq.push(3);
 
     pq.push(5);
