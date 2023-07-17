@@ -9,8 +9,9 @@ while (low<=high)
         int mid=(low+high)/2;
         if(nums[mid]==key){
             return mid; 
-            // returning the mid element
+            // returning the mid element 
         }
+        // return low
         else if(nums[mid]>low){
             return binarySearch(nums,mid+1,high,key);
         }
