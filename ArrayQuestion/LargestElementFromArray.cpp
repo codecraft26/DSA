@@ -9,7 +9,8 @@ int largest(vector<int>vec){
     for(int i=1;i<nums;i++)
         if(vec[i]>vec[largest])
         largest=i; //checking for what type of longest
-    return vec[largest];
+    return vec[largest]; //return largest number from thier
+    
 
 }
 
