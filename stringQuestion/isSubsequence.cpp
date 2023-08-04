@@ -10,6 +10,7 @@ using namespace std;
         if(s[j]==t[i]){
             j++;
         }
+     //if j is ==m return subsequence
        return (j == m);  
 }
 
