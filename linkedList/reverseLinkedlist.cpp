@@ -50,10 +50,12 @@ int main(){
     ll.push(4);
     ll.push(15);
     ll.push(85);
-   ll.print();
-   ll.reverse();
+//    ll.print(ll);
+//    ll.reverse();
    cout << "\nReversed Linked list \n";
-    ll.print();
+
+   
+    // ll.print();
 
 
 
