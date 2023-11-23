@@ -17,7 +17,6 @@ class Node{
 
 };
 
-
 int sumOfNode(Node *root){
     if(root==NULL){
         return 0 ;
@@ -33,10 +32,7 @@ int main(){
     root->left->right=new Node(34);
     root->left->left=new Node(65);
     root->right=new Node(5);
-    cout<<zsumOfNode(root);
-
-
-
+    cout<<sumOfNode(root);
 
 return 0;
 }
